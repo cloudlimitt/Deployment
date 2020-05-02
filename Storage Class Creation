@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-client-prov
+provisioner: kube.io/nfs
+parameters:
+  archiveOnDelete: "false"
+  type: nfs-disk
+  reclaimPolicy: retain
+  allowVolumeExpansion: "true"
